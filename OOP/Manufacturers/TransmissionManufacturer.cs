@@ -4,6 +4,8 @@ namespace OOP
 {
     public class TransmissionManufacturer
     {
+        public TransmissionManufacturer() { }
+
         public Dictionary<Transmissions, List<Transmission>> GetTransmissions()
         {
             Transmission carTransmission = new("Automatic  gearbox", 6, "Jatco");
@@ -18,10 +20,10 @@ namespace OOP
 
             Dictionary<Transmissions, List<Transmission>> transmissions = new()
             {
-                { Transmissions.CarTransmission, carTransmissions },
-                { Transmissions.TruckTransmission, truckTransmissions },
-                { Transmissions.BusTransmission, busTransmissions },
-                { Transmissions.ScooterTransmission, scooterTransmissions }
+                { Transmissions.Car, carTransmissions },
+                { Transmissions.Truck, truckTransmissions },
+                { Transmissions.Bus, busTransmissions },
+                { Transmissions.Scooter, scooterTransmissions }
             };
 
             return transmissions;

@@ -4,6 +4,8 @@ namespace OOP
 {
     public class ChassisManufacturer
     {
+        public ChassisManufacturer() { }
+
         public Dictionary<AvailableChassis, List<Chassis>> GetChassis()
         {
             Chassis carChassis = new(4, 813203, 8000);
@@ -18,10 +20,10 @@ namespace OOP
 
             Dictionary<AvailableChassis, List<Chassis>> chassis = new()
             {
-                { AvailableChassis.CarChassis, listOfCarChassis },
-                { AvailableChassis.TruckChassis, listOftTuckTransmissions },
-                { AvailableChassis.BusChassis, listOfBusTransmissions },
-                { AvailableChassis.ScooterChassis, listOfScooterTransmissions }
+                { AvailableChassis.Car, listOfCarChassis },
+                { AvailableChassis.Truck, listOftTuckTransmissions },
+                { AvailableChassis.Bus, listOfBusTransmissions },
+                { AvailableChassis.Scooter, listOfScooterTransmissions }
             };
 
             return chassis;

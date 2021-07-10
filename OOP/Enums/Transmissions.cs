@@ -2,9 +2,9 @@
 {
     public enum Transmissions
     {
-        CarTransmission,
-        TruckTransmission,
-        BusTransmission,
-        ScooterTransmission
+        Car,
+        Truck,
+        Bus,
+        Scooter
     }
 }

@@ -2,9 +2,9 @@
 {
     public enum AvailableChassis
     {
-        CarChassis,
-        TruckChassis,
-        BusChassis,
-        ScooterChassis
+        Car,
+        Truck,
+        Bus,
+        Scooter
     }
 }

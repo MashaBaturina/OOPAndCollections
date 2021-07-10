@@ -1,8 +1,13 @@
-﻿namespace OOP
+﻿using System;
+
+namespace OOP
 {
+    [Serializable]
     public class Scooter : VehicleUnit
     {
-        public int SeatHeight { get; private set; }
+        public int SeatHeight { get; set; }
+
+        public Scooter() { }
 
         public Scooter(int seatHeight, Engine engine, Transmission transmission, Chassis chassis) : base(engine, transmission, chassis)
         {

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 
 namespace OOP
 {
@@ -30,17 +31,18 @@ namespace OOP
             Autopark autopark = new(vehicles);
 
             // Group vehicle units by the transmisson type
-            Dictionary<string, List<VehicleUnit>> filteredVehicleUnits = vehicles.GroupBy(x => x.Transmission.TransmissionType).
+            Dictionary<string, List<VehicleUnit>> vehicleUnitsGroupByTranssmisionType = vehicles.GroupBy(x => x.Transmission.TransmissionType).
                 ToDictionary(g => g.Key, g => g.ToList());
 
             // Task OOP - white vehicle units to console
             ConsoleWriter.WriteVehicleUnitsToConsole(autopark.AutoparkVehicleUnits);
 
             // Task Collections - write units to xml 
-            XmlWriter.WriteAllVehicleUnitsToXml(autopark.AutoparkVehicleUnits);
-            XmlWriter.WriteFilteredVehicleUnitsToXml(autopark.AutoparkVehicleUnits, engineVolumeFilter);
-            XmlWriter.WriteVehicleUnitsGroupedByTransmissionTypeToXml(filteredVehicleUnits);
-            XmlWriter.WriteEnginesOfBusesAndTrucksToXml(autopark.AutoparkVehicleUnits);
+            XmlSerializerWriter.WriteAllVehicleUnitsToXmlSerialize(autopark.AutoparkVehicleUnits, "vehileUnitsSerializer.xml");
+            List<VehicleUnit> filteredAutoparkVehicleUnits =  XmlSerializerWriter.CreateFilteredVehicleUnitList(autopark.AutoparkVehicleUnits, engineVolumeFilter);
+            XmlSerializerWriter.WriteAllVehicleUnitsToXmlSerialize(filteredAutoparkVehicleUnits, "FilteredVehicleUnitSerializer.xml");
+            XmlSerializerWriter.WriteAllVehicleUnitsToXmlSerialize(vehicleUnitsGroupByTranssmisionType, "VehicleUnitsGroupByTranssmisionTypeSerializer.xml");
+            XmlSerializerWriter.WriteInfoAboutEnginesofBusAndTruckToXmlSerialize(autopark.AutoparkVehicleUnits, "InfoAboutEnginesofBusAndTruckToXmlSerialize.xml");
         }
     }
 }

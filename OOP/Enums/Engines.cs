@@ -2,9 +2,9 @@
 {
     public enum Engines
     {
-        CarEngine,
-        TruckEngine,
-        BusEngine,
-        ScooterEngine
+        Car,
+        Truck,
+        Bus,
+        Scooter
     }
 }

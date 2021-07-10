@@ -1,10 +1,15 @@
-﻿namespace OOP
+﻿using System;
+
+namespace OOP
 {
-   public class Chassis
+    [Serializable]
+    public class Chassis
     {
-        public int WheelsQuantity { get; private set; }
-        public int Number { get; private set; }
-        public int PermissibleCapacity { get; private set; }
+        public int WheelsQuantity { get; set; }
+        public int Number { get; set; }
+        public int PermissibleCapacity { get; set; }
+
+        public Chassis() { }
 
         public Chassis(int wheelsQuantity, int number, int permissibleCapacity)
         {

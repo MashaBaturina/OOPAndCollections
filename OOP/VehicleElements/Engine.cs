@@ -1,11 +1,16 @@
-﻿namespace OOP
+﻿using System;
+
+namespace OOP
 {
-   public class Engine
+    [Serializable]
+    public class Engine
     {
-        public int Power { get; private set; }
-        public double Volume { get; private set; }
-        public  string Type { get; private set; }
-        public string SerialNumber { get; private set; }
+        public int Power { get; set; }
+        public double Volume { get; set; }
+        public  string Type { get; set; }
+        public string SerialNumber { get; set; }
+
+        public Engine() { }
 
         public Engine(int power, double volume, string type, string serialNumber)
         {

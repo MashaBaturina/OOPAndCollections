@@ -1,9 +1,16 @@
-﻿namespace OOP
+﻿using System;
+using System.Xml.Serialization;
+
+namespace OOP
 {
+    [Serializable]
     public class Car : VehicleUnit
     {
-        public string CarBodyType { get; private set; }
-        
+        public Car() { }
+
+        public string CarBodyType { get; set; }
+
+       
         public Car(string carBodyType, Engine engine, Transmission transmission, Chassis chassis) : base(engine, transmission, chassis)
         {
             CarBodyType = carBodyType;         
